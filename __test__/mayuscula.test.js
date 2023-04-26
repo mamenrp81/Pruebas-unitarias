@@ -8,10 +8,10 @@ const isUpperCase = require('../utils/mayuscula');
 describe('mayusculas', () => {
     test.each`
       sentence      | expectedResult    
-      ${CURSO}      | ${true}
-      ${CurSO}      | ${false}
-      ${curso}      | ${false}
+      ${'CURSO'}      | ${true}
+      ${'CurSO'}      | ${false}
+      ${'curso'}      | ${false}
     `('$sentence should return $expectedResult', ({sentence, expectedResult}) => {
-      expect(sentence).toBe(expectedResult);
+      expect(isUpperCase(sentence)).toBe(expectedResult);
     });
   });
